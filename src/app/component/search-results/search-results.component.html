@@ -1,0 +1,20 @@
+<div
+    class="content">
+    <ul>
+        <li
+            *ngFor="let song of songs">
+            <div
+                [ngClass]="{
+                    'new': song.new
+                }"
+                class="song">
+                <div
+                    class="id">{{song.id}}</div>
+                <div
+                    class="artist">{{song.artist}}</div>
+                <div
+                    class="title">{{song.title}}</div>
+            </div>
+        </li>
+    </ul>
+</div>
