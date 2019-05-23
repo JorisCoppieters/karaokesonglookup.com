@@ -2998,7 +2998,9 @@ export class SongsService {
 
     public set filter(value: string) {
         this._filter = value;
-        this._filterSongs();
+        if (this._filter && this._filter.length > 1) {
+            this._filterSongs();
+        }
     }
 
     public onFiltered(fn: Function) {
