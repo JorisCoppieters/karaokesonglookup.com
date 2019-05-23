@@ -2998,9 +2998,7 @@ export class SongsService {
 
     public set filter(value: string) {
         this._filter = value;
-        if (this._filter && this._filter.length > 1) {
-            this._filterSongs();
-        }
+        this._filterSongs();
     }
 
     public onFiltered(fn: Function) {
@@ -3021,6 +3019,10 @@ export class SongsService {
         return this.filteredSongs$.asObservable();
     }
 
+    private _validFilter() {
+        return (this._filter && this._filter.length > 1);
+    }
+
     private _filterSongs() {
         if (this._songsFiltering) {
             return;
@@ -3028,7 +3030,7 @@ export class SongsService {
 
         this._songsFiltering = true;
 
-        const filteredSongs = this.filter ? this.getAllSongs()
+        const filteredSongs = this._validFilter() ? this.getAllSongs()
             .filter((song: Song) =>
                 song.title.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0 ||
                 song.artist.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0
