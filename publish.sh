@@ -6,6 +6,7 @@ set -e # Bail on first error
 
 DIST_ZIP=dist-`date +"%Y-%m-%d-%H%M%S"`.zip
 DEPLOY_SCRIPT=deploy-`date +"%Y-%m-%d-%H%M%S"`.sh
+BACKUP_DATE=`date +"%Y-%m-%d-%H%M%S"`
 SITENAME="karaokesonglookup.com"
 
 echo "#"
@@ -29,13 +30,12 @@ cd dist
 zip -r $DIST_ZIP ./
 
 echo "" > $DEPLOY_SCRIPT
-echo "BACKUP_DATE=`date +\"%Y-%m-%d-%H%M%S\"`" >> $DEPLOY_SCRIPT
 echo "mv \"/home/ubuntu/sites/"$SITENAME"/\" \"/home/ubuntu/sites_backup/"$BACKUP_DATE"_"$SITENAME"\"" >> $DEPLOY_SCRIPT
 echo "mkdir \"/home/ubuntu/sites/"$SITENAME"\"" >> $DEPLOY_SCRIPT
 echo "cd \"/home/ubuntu/sites/"$SITENAME"\"" >> $DEPLOY_SCRIPT
 echo "unzip \"/home/ubuntu/downloads/$DIST_ZIP\"" >> $DEPLOY_SCRIPT
-# echo "chown -R www-data:www-data ." >> $DEPLOY_SCRIPT
-# echo "chown www-data:ubuntu ." >> $DEPLOY_SCRIPT
+echo "sudo chown -R www-data:www-data ." >> $DEPLOY_SCRIPT
+echo "sudo chown www-data:ubuntu ." >> $DEPLOY_SCRIPT
 echo "rm \"/home/ubuntu/downloads/$DIST_ZIP\"" >> $DEPLOY_SCRIPT
 echo "rm \"/home/ubuntu/downloads/$DEPLOY_SCRIPT\"" >> $DEPLOY_SCRIPT
 
