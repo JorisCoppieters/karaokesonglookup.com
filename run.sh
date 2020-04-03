@@ -2,7 +2,7 @@
 
 set -e # Bail on first error
 
-#npm install -g @angular/cli@7.3.0
+#npm install -g @angular/cli
 
 echo "#"
 echo "# Formatting files"
@@ -14,4 +14,4 @@ echo "#"
 echo "# Running local server"
 echo "#"
 
-npm serve
+npm run serve
