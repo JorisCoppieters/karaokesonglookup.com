@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "outDir": "../out-tsc/spec",
     "types": [
       "jasmine",
