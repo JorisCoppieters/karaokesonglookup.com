@@ -6,10 +6,9 @@ set -e # Bail on first error
 #npm install -g npm-check-updates
 
 echo "#"
-echo "# Running ng update (see https://update.angular.io/#7.2:9.0)"
+echo "# To update angular, run through https://update.angular.io"
 echo "#"
-
-ng update
+read -r -p "Press enter to continue..."
 
 echo "#"
 echo "# Running npm-check-updates"
