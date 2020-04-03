@@ -39,3 +39,9 @@ echo "# Running build (prod)"
 echo "#"
 
 ng build --prod
+
+echo "#"
+echo "# Running serve (dev)"
+echo "#"
+
+ng serve
