@@ -2,7 +2,7 @@
 
 set -e # Bail on first error
 
-#npm install -g @angular/cli
+#npm install -g @angular/cli@7.3.0
 
 DIST_ZIP=dist-`date +"%Y-%m-%d-%H%M%S"`.zip
 DEPLOY_SCRIPT=deploy-`date +"%Y-%m-%d-%H%M%S"`.sh
