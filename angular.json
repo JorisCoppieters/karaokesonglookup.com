@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "defaultProject": "prototype-app",
+  "defaultProject": "karaokesonglookup-app",
   "newProjectRoot": "projects",
   "projects": {
-    "prototype-app": {
+    "karaokesonglookup-app": {
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -52,7 +52,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prototype-app:build"
+            "browserTarget": "karaokesonglookup-app:build"
           }
         },
         "lint": {
@@ -71,11 +71,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prototype-app:build:production"
+              "browserTarget": "karaokesonglookup-app:build:production"
             }
           },
           "options": {
-            "browserTarget": "prototype-app:build"
+            "browserTarget": "karaokesonglookup-app:build"
           }
         },
         "test": {
@@ -100,12 +100,12 @@
       "root": "",
       "sourceRoot": "src"
     },
-    "prototype-app-e2e": {
+    "karaokesonglookup-app-e2e": {
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "devServerTarget": "prototype-app:serve",
+            "devServerTarget": "karaokesonglookup-app:serve",
             "protractorConfig": "./protractor.conf.js"
           }
         },
