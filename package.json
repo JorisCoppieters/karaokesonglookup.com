@@ -49,7 +49,6 @@
     "format": "node ./build/format/format.js",
     "publish": "cross-env ./build/scripts/publish.sh",
     "lint": "ng lint",
-    "test": "ng test",
     "serve": "ng serve"
   },
   "version": "1.0.0"
